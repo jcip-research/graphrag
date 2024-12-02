@@ -56,7 +56,7 @@ class LanceDBVectorStore(BaseVectorStore):
         schema = pa.schema([
             pa.field("id", pa.string()),
             pa.field("text", pa.string()),
-            pa.field("vector", pa.list_(pa.float64()), list_size=DIM_SIZE),
+            pa.field("vector", pa.list_(pa.float64(), DIM_SIZE)),
             pa.field("attributes", pa.string()),
         ])
         # NOTE: If modifying the next section of code, ensure that the schema remains the same.
